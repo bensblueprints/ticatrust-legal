@@ -1,0 +1,33 @@
+{
+  "name": "ticatrust-content-automation",
+  "version": "1.0.0",
+  "description": "Automated content research system for Tica Trust Legal blog",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "scrape:reddit": "node scrapers/reddit-scraper.js",
+    "scrape:quora": "node scrapers/quora-scraper.js",
+    "trends": "node utils/google-trends.js",
+    "test:slack": "node utils/slack-notifier.js",
+    "daily": "node index.js"
+  },
+  "keywords": [
+    "automation",
+    "content",
+    "scraping",
+    "vietnam",
+    "business",
+    "legal"
+  ],
+  "author": "Benjamin Tate - Advanced Marketing",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "google-trends-api": "^4.9.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
