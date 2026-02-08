@@ -3,10 +3,11 @@ import { sql } from '@/lib/neon/client';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
   try {
-    const imagePath = '/' + params.path.join('/');
+    const resolvedParams = await params;
+    const imagePath = '/' + resolvedParams.path.join('/');
 
     // Query database for image
     const result = await sql`
